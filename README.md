@@ -1,9 +1,9 @@
-# Lenovo Thinkpad T440
+# Lenovo ThinkPad T440
 
 [![macOS](https://img.shields.io/badge/macOS-Big_Sur_11.2.3-red)](https://www.apple.com/macos/big-sur/)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.7-blue)](https://github.com/acidanthera/OpenCorePkg)
 
-Lenovo Thinkpad T440 using OpenCore Bootloader
+Lenovo ThinkPad T440 using OpenCore Bootloader
 
 
 ### What works:
@@ -67,7 +67,7 @@ First we need to download these three Applications: [Hackintool](https://github.
 
 
 ### Non TouchScreen Displays
-If your Lenovo Thinkpad T440 doesn't have a TouchScreen display, it is required for you to disable the kext responsible for TouchScreen.
+If your Lenovo ThinkPad T440 doesn't have a TouchScreen display, it is required for you to disable the kext responsible for TouchScreen.
 Go to `EFI/OC/Config.plist > Kernel > Add >` and disable the 4 following kexts:
 - `VoodooI2CServices.kext - Enabled = No`
 - `VoodooGPIO.kext - Enabled = No`
