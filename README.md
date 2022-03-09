@@ -1,6 +1,10 @@
 # Lenovo ThinkPad T440
 
-[![macOS](https://img.shields.io/badge/macOS-Big_Sur_11.2.3-red)](https://www.apple.com/macos/big-sur/)
+![4 repository-open-graph-template](https://user-images.githubusercontent.com/72415505/157464577-31e3859c-6c44-49f1-9e2f-0b4c9259b7aa.png)
+
+
+
+[![macOS](https://img.shields.io/badge/macOS-Big_Sur_11.6.4-red)](https://www.apple.com/macos/big-sur/)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.7.9-blue)](https://github.com/acidanthera/OpenCorePkg)
 
 Lenovo ThinkPad T440 using OpenCore Bootloader
@@ -35,6 +39,146 @@ Lenovo ThinkPad T440 using OpenCore Bootloader
 - FingerPrint Reader
 - Docking Station Kernel Panic if `Sleep, Reboot, Shutdown` attempted while external display connected on one of the Dock Ports
 - Docking Station DisplayPort Audio
+
+## Lenovo ThinkPad T440 Hackintosh Guide
+
+To start you'll need the following:
+
+- A Lenovo ThinkPad T440 (Obviously)
+
+- A PC with a copy of Windows 10 or higher installed
+
+- 4GB USB Stick
+
+- [Rufus](https://rufus.ie/en/)
+
+ - For USB larger than 16 GB to format in FAT32, use the [Rufus](https://rufus.ie/en/) method.
+
+- A copy of the [EFI](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440S/releases/) folder
+
+- [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/releases)
+
+- This will require [Python](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7?activetab=pivot:overviewtab) installed.
+#
+
+1. To grab legacy installers is super easy, first grab a copy of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) and head to /Utilities/macrecovery/. Next copy the folder path for the macrecovery folder. 
+
+<img width="974" alt="file-path 0aea4278" src="https://user-images.githubusercontent.com/72415505/156628158-190cba5d-6114-4972-aa83-f1b14749e34d.png">
+
+
+#
+2. From here, you'll want to open up a Command Prompt and cd into the macrecovery folder that we copied earlier:
+
+cd Paste_Folder_Path
+
+<img width="917" alt="command-prompt 53392eba" src="https://user-images.githubusercontent.com/72415505/156628358-c2692037-80ac-40f9-bb3b-9a424442dafe.png">
+
+#
+3. Now run one of the following depending on what version of macOS you want(Note these scripts rely on [Python](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7?activetab=pivot:overviewtab) support, please install if you haven't already):
+
+ ## Lion (10.7):
+
+python macrecovery.py -b Mac-2E6FAB96566FE58C -m 00000000000F25Y00 download
+
+python macrecovery.py -b Mac-C3EC7CD22292981F -m 00000000000F0HM00 download
+
+ ## Mountain Lion (10.8):
+
+python macrecovery.py -b Mac-7DF2A3B5E5D671ED -m 00000000000F65100 download
+
+ ## Mavericks (10.9):
+
+python macrecovery.py -b Mac-F60DEB81FF30ACF6 -m 00000000000FNN100 download
+
+ ## Yosemite (10.10):
+
+python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000GDVW00 download
+
+ ## El Capitan (10.11):
+
+python macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000GQRX00 download
+
+ ## Sierra (10.12):
+
+python macrecovery.py -b Mac-77F17D7DA9285301 -m 00000000000J0DX00 download
+
+ ## High Sierra (10.13)
+
+python macrecovery.py -b Mac-7BA5B2D9E42DDD94 -m 00000000000J80300 download
+
+ ## High Sierra (10.13) (Alternate Command)
+ 
+python macrecovery.py -b Mac-BE088AF8C5EB4FA2 -m 00000000000J80300 download
+
+ ## Mojave (10.14)
+
+python macrecovery.py -b Mac-7BA5B2DFE22DDD8C -m 00000000000KXPG00 download
+
+ ## Catalina (10.15)
+
+python macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
+
+ ## Big Sur (11)
+
+python macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
+
+This will take some time, however once you're finished you should get either BaseSystem or RecoveryImage files:
+
+![macrecovery-after 4c24ba88](https://user-images.githubusercontent.com/72415505/156629881-3d0e18a5-79cf-465e-a054-44b39a77b47f.jpg) <img width="973" alt="basesystem-example 93778929" src="https://user-images.githubusercontent.com/72415505/156629925-77869c1f-19ee-463f-bcc7-cafb2be09866.png">
+
+#
+4. Download [Rufus](https://rufus.ie/en/), set the BOOT selection as not bootable, set File System as Large FAT32, click Start, and delete all file autorun in USB Drive partition.
+
+![format-usb-rufus 43feba9e](https://user-images.githubusercontent.com/72415505/156631083-73e33087-d51e-42e4-a804-e93afad7c2ca.png)
+
+#
+5. Next, go to the root of this USB drive and create a folder called com.apple.recovery.boot. Then move the downloaded BaseSystem or RecoveryImage files. Please ensure you copy over both the .dmg and .chunklist files to this folder:
+
+<img width="824" alt="com-recovery 805dc41f" src="https://user-images.githubusercontent.com/72415505/156631343-529ca3ee-9e79-4e21-bab1-7305b4ed3df9.png">
+
+#
+
+6. Open up and extract the EFI folder archive you downloaded earlier.
+
+
+7. Copy the folder named, "EFI," to the root of your USB Drive.
+
+8. Restart your computer.
+
+9. Open BIOS and disable all the security options.
+
+10. Boot via your Flash Drive.
+
+11. Boot the Hackintosh installer.
+
+12. Now open Disk Utility and format your internal or external Hard Drive or SSD as APFS.
+
+13. Install macOS.
+
+14. Your system might reboot during the install.
+
+15. Now after install again boot into your usb drive but now boot into the drive in which you installed macOS to.
+
+16. Open Clover Configurator and Mount the EFI partition of the drive you want to boot off of.
+
+17. Now copy my EFI Folder and overrite it with the one system created.
+
+18. Now try booting macOS without the USB drive.
+
+19. Congratulations, you've successfully hackintoshed your Lenovo ThinkPad T440.
+
+#
+## Lenovo ThinkPad T440 OpenCore Update Guide
+
+1. Download and install the [OpenCore Updater](https://github.com/mswgen/oc-updater/releases).
+2. When the app opens, press Get Started. A dialog will appear asking you to select the EFI directory.
+3. Mount the EFI Partition on your drive using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/).
+4. Select your EFI directory. It's usually /Volumes/EFI/EFI. It should have BOOT and OC directories inside.
+5. If your OpenCore version is detected, your OpenCore version and list of kexts you are using will be displayed. If your OpenCore version is not detected, you will be asked to select the OpenCore version you are using. Select the version you are using and press Select this version.
+6. If you are not using the latest version of OpenCore, the app will ask you to update. Press Update to update OpenCore.
+7. The app will start to download OpenCore, kexts, and Binary Data. this might take some time and you might see the spinning beach ball. DO NOT CLOSE THE APP.
+8. When the app finishes downloading, it will create a backup of your old EFI and will swap files with the new ones.
+9. Then, it will update config.plist. When it's done, it will display that it's done. It will also display the list of not updated kexts, the backup directory, and that OpenCore Vault is disabled(if it was enabled). You need to reboot your computer to see the changes.
 
 ### Bios
 These are the recommended settings to have everything working properly:
