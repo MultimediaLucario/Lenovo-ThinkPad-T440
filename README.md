@@ -2,6 +2,10 @@
 
 ![4 repository-open-graph-template](https://user-images.githubusercontent.com/72415505/157464577-31e3859c-6c44-49f1-9e2f-0b4c9259b7aa.png)
 
+#
+## All credit goes to the original creator, [Sniki](https://github.com/Sniki).
+
+## [Download the EFI Folder](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/)
 
 
 [![macOS](https://img.shields.io/badge/macOS-Big_Sur_11.6.4-red)](https://www.apple.com/macos/big-sur/)
@@ -54,7 +58,7 @@ To start you'll need the following:
 
  - For USB larger than 16 GB to format in FAT32, use the [Rufus](https://rufus.ie/en/) method.
 
-- A copy of the [EFI](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440S/releases/) folder
+- A copy of the [EFI](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/) folder
 
 - [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/releases)
 
