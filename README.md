@@ -1,6 +1,7 @@
-# Lenovo ThinkPad T440
+# Lenovo ThinkPad T440 OpenCore Configuration
 
-![4 repository-open-graph-template](https://user-images.githubusercontent.com/72415505/157464577-31e3859c-6c44-49f1-9e2f-0b4c9259b7aa.png)
+![repository-open-graph-template-t440](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/assets/72415505/6bb614dc-1004-4bee-b7f5-bced36b332b9)
+
 
 #
 ## All credit goes to the original creator, [Sniki](https://github.com/Sniki).
@@ -8,8 +9,8 @@
 ## [Download the EFI Folder](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/)
 
 
-[![macOS](https://img.shields.io/badge/macOS-Monterey_12.6-red)](https://www.apple.com/macos/big-sur/)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.3-blue)](https://github.com/acidanthera/OpenCorePkg)
+[![macOS](https://img.shields.io/badge/macOS-Big-Sur-red)](https://www.apple.com/macos/big-sur/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.8-blue)](https://github.com/acidanthera/OpenCorePkg)
 
 Lenovo ThinkPad T440 using OpenCore Bootloader
 
