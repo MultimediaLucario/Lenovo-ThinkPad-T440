@@ -7,7 +7,7 @@
 
 
 [![macOS](https://img.shields.io/badge/macOS-Big_Sur-red)](https://www.apple.com/macos/big-sur/)
-[![macOS](https://img.shields.io/badge/macOS-Monterey_-green)](https://www.apple.com/macos/monterey/)
+[![macOS](https://img.shields.io/badge/macOS-Monterey_-purple)](https://www.apple.com/macos/monterey/)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.9.8-blue)](https://github.com/acidanthera/OpenCorePkg)
 
 
