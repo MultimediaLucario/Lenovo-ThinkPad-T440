@@ -9,7 +9,7 @@
 ## [Download the EFI Folder](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/)
 
 
-[![macOS](https://img.shields.io/badge/macOS-Big-Sur-red)](https://www.apple.com/macos/big-sur/)
+[![macOS](https://img.shields.io/badge/macOS-11-red)](https://www.apple.com/macos/big-sur/)
 [![OpenCore](https://img.shields.io/badge/OpenCore-0.9.8-blue)](https://github.com/acidanthera/OpenCorePkg)
 
 Lenovo ThinkPad T440 using OpenCore Bootloader
