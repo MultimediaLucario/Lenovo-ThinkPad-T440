@@ -1,24 +1,102 @@
-# Lenovo ThinkPad T440
+# Lenovo ThinkPad T440 OpenCore Configuration
 
-![4 repository-open-graph-template](https://user-images.githubusercontent.com/72415505/157464577-31e3859c-6c44-49f1-9e2f-0b4c9259b7aa.png)
-
-#
-## All credit goes to the original creator, [Sniki](https://github.com/Sniki).
-
-## [Download the EFI Folder](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/)
+![repository-open-graph-template-t440](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/assets/72415505/1c2d1748-4d6e-4c18-923a-6592d75d35f7)
 
 
-[![macOS](https://img.shields.io/badge/macOS-Monterey_12.6-red)](https://www.apple.com/macos/big-sur/)
-[![OpenCore](https://img.shields.io/badge/OpenCore-0.8.3-blue)](https://github.com/acidanthera/OpenCorePkg)
-
-Lenovo ThinkPad T440 using OpenCore Bootloader
 
 
-### What works:
+
+[![macOS](https://img.shields.io/badge/macOS-Big_Sur-red)](https://www.apple.com/macos/big-sur/)
+[![macOS](https://img.shields.io/badge/macOS-Monterey_-purple)](https://www.apple.com/macos/monterey/)
+[![OpenCore](https://img.shields.io/badge/OpenCore-0.9.8-blue)](https://github.com/acidanthera/OpenCorePkg)
+
+
+<p align="center">
+   <strong>Status: Maintained </strong>
+   <br />
+   <strong>OpenCore Version: </strong>0.9.8
+   <br />
+   <a href="https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases"><strong>Download now »</strong></a>
+   <br />
+   <a href="https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/discussions">Report Bug</a>
+   ·
+   <a href="https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440s/blob/main/CHANGELOG.md">Recent Changes</a>
+   ·
+   <a href=https://www.youtube.com/watch?v=6cAxwXj5Zy4">YouTube Review</a>
+   ·
+   <a href="https://github.com/Sniki/Lenovo-Thinkpad-T440">Original Repo</a>
+  </p>
+</p>
+</br>
+
+<details>  
+<summary><strong>Recent Changes ⌚️ </strong></summary>
+</br>
+
+**03.27.2024** : Updated to ```OpenCore 0.9.8``` .
+     
+**03/27/2023** : Updated to ```OpenCore 0.9.0``` .
+
+**02/01/2023** : Updated to ```OpenCore 0.8.8``` .
+                                                           
+**12/14/2022** : Updated to ```OpenCore 0.8.7``` .
+
+**11/14/2022** : Updated to ```OpenCore 0.8.6``` . 
+
+**11/09/2022** : Changed the SMBIOS from ```MacBookPro12,1``` to ```MacBookPro14,1``` for better power management.
+
+**10/25/2022** : Downgraded back to ```OpenCore 0.8.3``` to avoid kernel panics and improve stability.
+                                                           
+**10/14/2022** : Changed the SMBIOS from ```MacBookPro11,5``` to  ```MacBookPro12,1```  and finally added support for video out in macOS Monterey.
+
+**10/12/2022** : Updated from OpenCore 0.8.3 to OpenCore 0.8.5                                                          
+                                                           
+**09/29/2022** : Added TrackPoint support and fixed the Instant Wake Issue when in sleep mode.
+
+**09/26/2022** : Added Bluetooth support for macOS Monterey & fixed the slow startup issue.
+
+**09/18/2022** : Changed the SMBIOS from ```MacBookPro11,1``` to  ```MacBookPro11,5``` for macOS Monterey.
+
+</details>
+
+</details>
+
+
+
+
+<details>  
+<summary><strong>My ThinkPad T440's Hardware Specs 💻</strong></summary>
+</br>
+
+| Model              | Lenovo ThinkPad T440                                                                               |
+|:-------------------|:----------------------------------------------------------------------------------------------------------|
+| Processor          | Intel Core i5-4300U (2C, 4T,  1.9GHz / 2.5GHz) vPro (The best compatibility with macOS)                                                              
+| Graphics           | Integrated Intel HD Graphics 4400                                                                         |
+| Memory             | 8 GB DDR3 (4GB Soldered + 4GB SODIMM DDR3, dual-channel)                                                       |
+| Display            | 14" HD (1600x900) TN, non-touch                                                                       |
+| Storage            | 128 GB Samsung SATA SSD + 16 GB mSATA SSD                                                                             |
+| Ethernet           | Intel Ethernet                                                         |
+| WLAN + Bluetooth   | Intel Wifi 7260ngw + Bluetooth 4.0                                        |
+| Camera             | 720p resolution, low light sensitive, fixed focus                                                       |
+| Audio support      | HD Audio, Realtek ALC3245 codec, stereo speakers 1Wx2, dual array microphone, combo audio/microphone jack |
+| Keyboard           | 6-row, spill-resistant, multimedia Fn keys, LED backlight                                                 |
+| Battery            | Internal Li-Polymer 3-cell (68) and External Li-Ion 6-cell (68+)                       |
+
+
+</details>
+
+</details>
+
+<details>  
+<summary><strong>Hardware Compatibility 🧰</strong></summary>
+</br>
+ 
+## What works:
 - Intel HD Graphics 4400 QE/CI
 - Brightness Control
 - TouchScreen with Gestures
 - Keyboard & Backlit
+- TrackPoint (TrackPoint / Nipple Mouse Warriors, rejoice!)
 - TouchPad with Gestures
 - Dual Battery Support
 - Secure Boot
@@ -34,36 +112,75 @@ Lenovo ThinkPad T440 using OpenCore Bootloader
 - SD Card Reader
 - Docking Station USB Ports
 - Docking Station LAN
-- Docking Station DisplayPort
-- Docking Station VGA Port
-- Docking Station DVI Port
+- Docking Station DisplayPort 
+- Docking Station VGA Port 
+- Docking Station DVI Port 
+- Docking Station DisplayPort Audio 
+- [DRM content](https://github.com/acidanthera/OpenCorePkg/releases) 
 
-### What doesn't work:
-- DRM content
+## What doesn't work:
 - FingerPrint Reader
-- Docking Station Kernel Panic if `Sleep, Reboot, Shutdown` attempted while external display connected on one of the Dock Ports
-- Docking Station DisplayPort Audio
 
+
+
+</details>
+
+</details>
+
+<details>  
+<summary><strong>Photos 📷 </strong></summary>
+</br>
+
+ ![r2xgs31wo6791](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/assets/72415505/57e91a88-e924-4f77-ae12-6888e4009f8e)
+![just-fixed-the-keyboard-on-my-homies-thinkpad-t440-v0-ss1ah4lyfyrc1](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/assets/72415505/8b355538-4a92-4c6b-94d7-0cf1c92d2d10)
+![just-fixed-the-keyboard-on-my-homies-thinkpad-t440-v0-djr584lyfyrc1](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/assets/72415505/0aece8ab-9623-43b7-a10b-e3c0831c3355)
+
+
+</details>
+
+</details>
+
+<details>  
+<summary><strong>macOS Ventura Compatibility </strong></summary>
+</br>
+
+> **Warning**
+> macOS Ventura support is currently in ALPHA which means it is extremely unstable. Use at your own risk!
+
+<a href="https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440s/blob/main/macOS%20Ventura%20Support.md"><strong>
+macOS Ventura Support »</strong></a>
+
+</details>
+
+
+
+
+
+
+</details>
+
+#
 ## Lenovo ThinkPad T440 Hackintosh Guide
+
+<details>  
+<summary><strong>Getting Started</strong></summary>
+</br>
 
 To start you'll need the following:
 
-- A Lenovo ThinkPad T440 (Obviously)
+You must have the following items:
+- Lenovo ThinkPad T440 (Obviously 😁).
+   > Please note that it is recommended your ThinkPad T440 has an Intel Core i5-4210U in order for macOS to boot. 
+- Access to a working Windows machine with Python installed.
+- A pendrive with more than 4 GB (Keep in mind, during the preperation we will format the disk to create the install media).
+- an Internet connection via Ethernet.
+- 1-2 hours of your time.
 
-- A PC with a copy of Windows 10 or higher installed
+</details>
 
-- 4GB USB Stick
-
-- [Rufus](https://rufus.ie/en/)
-
- - For USB larger than 16 GB to format in FAT32, use the [Rufus](https://rufus.ie/en/) method.
-
-- A copy of the [EFI](https://github.com/MultimediaLucario/Lenovo-ThinkPad-T440/releases/) folder
-
-- [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/releases)
-
-- This will require [Python](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7?activetab=pivot:overviewtab) installed.
-#
+<details>  
+<summary><strong>Creating the USB Installer </strong></summary>
+</br>
 
 1. To grab legacy installers is super easy, first grab a copy of [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases) and head to /Utilities/macrecovery/. Next copy the folder path for the macrecovery folder. 
 
@@ -73,58 +190,30 @@ To start you'll need the following:
 #
 2. From here, you'll want to open up a Command Prompt and cd into the macrecovery folder that we copied earlier:
 
-cd Paste_Folder_Path
+```cd Paste_Folder_Path```
 
 <img width="917" alt="command-prompt 53392eba" src="https://user-images.githubusercontent.com/72415505/156628358-c2692037-80ac-40f9-bb3b-9a424442dafe.png">
 
 #
 3. Now run one of the following depending on what version of macOS you want(Note these scripts rely on [Python](https://www.microsoft.com/en-us/p/python-39/9p7qfqmjrfp7?activetab=pivot:overviewtab) support, please install if you haven't already):
 
- ## Lion (10.7):
-
-python macrecovery.py -b Mac-2E6FAB96566FE58C -m 00000000000F25Y00 download
-
-python macrecovery.py -b Mac-C3EC7CD22292981F -m 00000000000F0HM00 download
-
- ## Mountain Lion (10.8):
-
-python macrecovery.py -b Mac-7DF2A3B5E5D671ED -m 00000000000F65100 download
-
- ## Mavericks (10.9):
-
-python macrecovery.py -b Mac-F60DEB81FF30ACF6 -m 00000000000FNN100 download
-
- ## Yosemite (10.10):
-
-python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000GDVW00 download
-
- ## El Capitan (10.11):
-
-python macrecovery.py -b Mac-FFE5EF870D7BA81A -m 00000000000GQRX00 download
-
- ## Sierra (10.12):
-
-python macrecovery.py -b Mac-77F17D7DA9285301 -m 00000000000J0DX00 download
-
- ## High Sierra (10.13)
-
-python macrecovery.py -b Mac-7BA5B2D9E42DDD94 -m 00000000000J80300 download
-
- ## High Sierra (10.13) (Alternate Command)
- 
-python macrecovery.py -b Mac-BE088AF8C5EB4FA2 -m 00000000000J80300 download
-
- ## Mojave (10.14)
-
+ ```
+# Mojave (10.14)
 python macrecovery.py -b Mac-7BA5B2DFE22DDD8C -m 00000000000KXPG00 download
 
- ## Catalina (10.15)
-
+# Catalina (10.15)
 python macrecovery.py -b Mac-00BE6ED71E35EB86 -m 00000000000000000 download
 
- ## Big Sur (11)
-
+# Big Sur (11)
 python macrecovery.py -b Mac-42FD25EABCABB274 -m 00000000000000000 download
+
+# Monterey (12)
+python macrecovery.py -b Mac-E43C1C25D4880AD6 -m 00000000000000000 download
+
+# Ventura (13) (Work in progress)
+python3 macrecovery.py -b Mac-4B682C642B45593E -m 00000000000000000 download
+```
+macOS 12 and above note: As recent macOS versions introduce changes to the USB stack, it is highly advisable that you map your USB ports (with USBToolBox) before installing macOS. 
 
 This will take some time, however once you're finished you should get either BaseSystem or RecoveryImage files:
 
@@ -149,40 +238,62 @@ This will take some time, however once you're finished you should get either Bas
 
 8. Restart your computer.
 
-9. Open BIOS and disable all the security options.
 
-10. Boot via your Flash Drive.
+</details>
 
-11. Boot the Hackintosh installer.
+<details>  
+<summary><strong>Installing macOS</strong></summary>
+</br>
+
+1. Open the BIOS and disable all the security options. (Security Chip, Intel (R) AT Module Activation, and Computrace Module)
+
+2. Boot via your Flash Drive.
+
+11. Boot the macOS installer.
 
 12. Now open Disk Utility and format your internal or external Hard Drive or SSD as APFS.
 
-13. Install macOS.
+13. Follow the on-screen prompts and install macOS.
 
-14. Your system might reboot during the install.
+14. Your system might reboot during the installation.
 
-15. Now after install again boot into your usb drive but now boot into the drive in which you installed macOS to.
+15. Now after install again boot into your usb drive and then select the drive that you installed macOS on.
 
-16. Open Clover Configurator and Mount the EFI partition of the drive you want to boot off of.
+16. Download and install [OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/).
 
-17. Now copy my EFI Folder and overrite it with the one system created.
+17. Open [OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/) and Mount the EFI partition of the drive you want to boot off of.
 
-18. Now try booting macOS without the USB drive.
+18. Now copy the EFI Folder to the EFI Partition and overwrite it with the one system created.
 
-19. Congratulations, you've successfully hackintoshed your Lenovo ThinkPad T440.
+19. Now try booting macOS without the USB drive.
+
+20. Congratulations, you've successfully hackintoshed your Lenovo ThinkPad T440.
+
 
 #
-## Lenovo ThinkPad T440 OpenCore Update Guide
+
+
+</details>
+
+<details>  
+<summary><strong>Updating OpenCore </strong></summary>
+</br>
 
 1. Download and install the [OpenCore Updater](https://github.com/mswgen/oc-updater/releases).
 2. When the app opens, press Get Started. A dialog will appear asking you to select the EFI directory.
-3. Mount the EFI Partition on your drive using [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/).
+3. Mount the EFI Partition on your drive using [OpenCore Configurator](https://mackie100projects.altervista.org/download-opencore-configurator/).
 4. Select your EFI directory. It's usually /Volumes/EFI/EFI. It should have BOOT and OC directories inside.
 5. If your OpenCore version is detected, your OpenCore version and list of kexts you are using will be displayed. If your OpenCore version is not detected, you will be asked to select the OpenCore version you are using. Select the version you are using and press Select this version.
 6. If you are not using the latest version of OpenCore, the app will ask you to update. Press Update to update OpenCore.
 7. The app will start to download OpenCore, kexts, and Binary Data. this might take some time and you might see the spinning beach ball. DO NOT CLOSE THE APP.
 8. When the app finishes downloading, it will create a backup of your old EFI and will swap files with the new ones.
 9. Then, it will update config.plist. When it's done, it will display that it's done. It will also display the list of not updated kexts, the backup directory, and that OpenCore Vault is disabled(if it was enabled). You need to reboot your computer to see the changes.
+
+</details>
+
+<details>  
+<summary><strong>Post-Install Tweaks </strong></summary>
+</br>
 
 ### Bios
 These are the recommended settings to have everything working properly:
@@ -193,7 +304,8 @@ These are the recommended settings to have everything working properly:
 - `Anti-Theft > Computrace > Computrace Module Activation > Current Setting [Disabled]`
 
 **Note**: These laptops do have whitelist which doesn't allow you to use other Card than the Intel AC7260.
-In order to use a different / supported card, you need to mod your bios (remove whitelist).
+In order to use a different / supported card, you need to mod your bios (remove whitelist) or downgrade to Bios v2.36
+- Bios v2.36 doesn't have whitelist so downgrading allows you to use any wireless card that you want.
 
 
 ### Secure Boot
@@ -223,7 +335,7 @@ Go to `EFI/OC/Config.plist > Kernel > Add >` and disable the 4 following kexts:
 - `VoodooI2CHID.kext - Enabled = No`
 
 ### TouchPad
-Most of the users have probably already upgraded to a X250 Touchpad (the one with Physical Buttons) and this one does work natively, no need to touch anything.
+Most of the users have probably already upgraded to a Lenovo ThinkPad T450s Touchpad (the one with Physical Buttons) and this one does work natively, no need to touch anything.
 For you users that have the standard Touchpad that came with this laptop, you have to do some changes as VoodooRMI doesn't seem to work very well with them.
 
 Go to `EFI/OC/Config.plist > Kernel > Add` and disable the VoodooRMI kexts:
@@ -309,6 +421,23 @@ You can specify other country codes like: **US**, **CN**, **#a**, etc by going i
 - `EFI/OC/Config.plist > DeviceProperties > Add > PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0,0x0)` and rename/uncomment:
 - `#country-code` to `country-code` and set the desired value (**#a** is the preset value, replace with the country code that you need)
 
-### Credits
+</details>
+
+<details>  
+<summary><strong> ⚠️ Anti-Piracy Warning / Disclaimer ⚠️ </strong></summary>
+</br>
+
+### ⚠️ PIRACY IS NO PARTY! ⚠️
+
+I do not endorse or condone the use of pre-configured Hackintosh Distros because not only they cause unnecessary harm to your machine but it is considered to be a form of **Software Piracy**. Software Piracy is a serious crime according to copyright law and is punishable for up to 10 years in prison. 
+
+</details>
+
+## Credits
+
+<details>  
+<summary><strong>Special Thanks to...</strong></summary>
+</br>
+
 - [zhen-zen](https://github.com/zhen-zen) for **YogaSMC** and **BrightnessKeys**
 - [benbender](https://github.com/benbender) for **SSDT-BATX**, **Touchscreen Gestures** and **ACPI refinements**
