@@ -467,7 +467,7 @@
 			</dict>
 		</dict>
 		<key>Delete</key>
-		<dict/>
+		<dict></dict>
 	</dict>
 	<key>Kernel</key>
 	<dict>
@@ -1490,7 +1490,7 @@
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array/>
+		<array></array>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleAttributes</key>
